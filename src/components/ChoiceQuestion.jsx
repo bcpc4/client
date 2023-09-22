@@ -1,3 +1,4 @@
+import { addIncorrect } from '@/utils/review';
 import { Center, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -34,6 +35,7 @@ const ChoiceQuestion = (props) => {
                 setNumAns((prev) => prev + 1);
               } else {
                 // 오답일 때
+                addIncorrect(questions[curQIndex]);
               }
               setCurQIndex((prev) => prev + 1);
             }}
