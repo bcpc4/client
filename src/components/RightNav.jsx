@@ -6,8 +6,22 @@ import {
   Image,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const RightNav = () => {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const sProgress = parseFloat(localStorage.getItem('progress') ?? '0');
+      if (!isNaN(sProgress)) {
+        setProgress(sProgress);
+      }
+    }, 500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <Flex
       direction='column'
@@ -37,21 +51,28 @@ const RightNav = () => {
         fontWeight='700'
         lineHeight='30px'
       >
-        Lv. 2
+        Lv. {progress}
       </Box>
       <Image
         h='200px'
         w='182px'
         marginLeft='auto'
         marginRight='auto'
-        borderRadius='40%'
+        borderRadius={`${progress}%`}
         flexShrink={0}
         alt='은행레벨'
         src='https://s3-alpha-sig.figma.com/img/f6fc/093c/bcaa620e990f356aa6ecdca283792808?Expires=1696204800&Signature=qPN00wY9MX0KIh8vcf77Ejnp1gEoDG9EjToY~iB1rbqC3GI5bticsm8gDhx8onYWNNZPUCMqHvsmdg3rL1ajmc40hyXRv01uQinkZZsInC9GQOvel6o511n1aOusqK88o4THKXzGT137BwDUpV99uZf~ZddcHkY4Y-qNgdJKUXsZKwZJ08Is3u583MX0374I-yggs69H9XYi6ewqVDB6PMg57fGq1SuspPXfJawMa8Zehigk1Fmdr3KMO0DzfrNCenXSVUf0S6L4wcBLDl1Q3qOZyS3W~ZnafJQHJNDFLP0bhO1Z6H47UYItXEtFahNn-XfXHwfZ~cVTbN6OCN0mOA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
       />
       <Box display='flex' mt='2' ml='55' alignItems='center'>
-        <CircularProgress value={40} ml='2' thickness='15px' color='#569E54'>
-          <CircularProgressLabel color='#ddd34a'>40%</CircularProgressLabel>
+        <CircularProgress
+          value={progress}
+          ml='2'
+          thickness='15px'
+          color='#569E54'
+        >
+          <CircularProgressLabel color='#ddd34a'>
+            {progress}%
+          </CircularProgressLabel>
         </CircularProgress>
         <Image
           h='53px'
