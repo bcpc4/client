@@ -20,11 +20,11 @@ export default function Home() {
 
   return (
     <Providers>
-      <Grid gridTemplateRows='60px auto' h='100vh'>
+      <Grid gridTemplateRows="60px auto" h="100vh">
         <Header />
-        <Grid gridTemplateColumns='264px auto 264px'>
+        <Grid gridTemplateColumns="264px auto 264px">
           <LeftNav />
-          <Box h='calc(100vh - 60px)' overflow='scroll'>
+          <Box h="calc(100vh - 60px)" overflow="scroll">
             <CardQuestion vocabs={result} />
           </Box>
           <RightNav />

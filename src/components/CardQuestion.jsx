@@ -44,7 +44,7 @@ const CardQuestion = (props) => {
       <div>
         <Text>시도 횟수 {numTry} (최소 4)</Text>
         <Text>테스트 끝!</Text>
-        <Link href='/'>홈으로 가기</Link>
+        <Link href="/">홈으로 가기</Link>
       </div>
     );
 
@@ -52,46 +52,48 @@ const CardQuestion = (props) => {
     <div>
       <Text>시도 횟수 {numTry} (최소 4)</Text>
       <SimpleGrid columns={2}>
-        <Flex direction='column' p='8px' gap='8px'>
+        <Flex direction="column" p="8px" gap="8px">
           {shuffledVocabs.map((sv) =>
             doneVocabs.includes(sv.index) ? (
               <React.Fragment key={sv.index} />
             ) : (
               <Center
-                h='320px'
-                p='12px'
+                h="320px"
+                p="12px"
                 key={sv.index}
-                border='1px solid'
+                border="1px solid"
                 borderColor={
                   selectedVocab?.index === sv.index ? 'gray.600' : 'gray.200'
                 }
-                cursor='pointer'
+                cursor="pointer"
                 onClick={() => setSelectedVocab(sv)}
               >
-                <Text textAlign='center'>{sv.content}</Text>
+                <Text textAlign="center" width="270px" height="171px">
+                  {sv.content}
+                </Text>
               </Center>
             )
           )}
         </Flex>
-        <Flex direction='column' p='8px' gap='8px'>
+        <Flex direction="column" p="8px" gap="8px">
           {shuffledDefinitions.map((sv) =>
             doneDefinitions.includes(sv.index) ? (
               <React.Fragment key={sv.index} />
             ) : (
               <Center
-                h='320px'
-                p='12px'
+                h="320px"
+                p="12px"
                 key={sv.index}
-                border='1px solid'
+                border="1px solid"
                 borderColor={
                   selectedDefinition?.index === sv.index
                     ? 'gray.600'
                     : 'gray.200'
                 }
-                cursor='pointer'
+                cursor="pointer"
                 onClick={() => setSelectedDefinition(sv)}
               >
-                <Text textAlign='center'>{sv.content}</Text>
+                <Text textAlign="center">{sv.content}</Text>
               </Center>
             )
           )}
