@@ -1,4 +1,5 @@
 import { Providers } from '@/app/providers';
+import ChoiceQuestion from '@/components/ChoiceQuestion';
 import LeftNav from '@/components/LeftNav';
 import RightNav from '@/components/RightNav';
 import { Box, Flex, Grid } from '@chakra-ui/react';
@@ -26,22 +27,7 @@ export default function Home() {
           <LeftNav />
           <Box h='calc(100vh - 60px)' overflow='scroll'>
             <Flex direction='column' gap='4px'>
-              {result.map((r) => (
-                <div key={r.questionIndex}>
-                  <Flex gap='8px'>
-                    <span>{r.questionIndex}.</span>
-                    <span>{r.question}</span>
-                  </Flex>
-                  <div>
-                    {r.choices.map((c, cIdx) => (
-                      <div key={cIdx}>
-                        [{cIdx + 1}] {c}
-                      </div>
-                    ))}
-                  </div>
-                  <div>(answer: {r.answer})</div>
-                </div>
-              ))}
+              <ChoiceQuestion questions={result} />
             </Flex>
           </Box>
           <RightNav />
