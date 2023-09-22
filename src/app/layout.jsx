@@ -1,6 +1,5 @@
 import { Providers } from './providers';
 import './reset.css';
-('use client');
 
 export default function RootLayout({ children }) {
   return (

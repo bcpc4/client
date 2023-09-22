@@ -1,13 +1,20 @@
 import { Providers } from '@/app/providers';
 import LeftNav from '@/components/LeftNav';
 import RightNav from '@/components/RightNav';
-import { Box, Button, Flex, Grid, Input } from '@chakra-ui/react';
+import { Box, Flex, Grid } from '@chakra-ui/react';
 import axios from 'axios';
-import { useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const inputRef = useRef();
   const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    const major = localStorage.getItem('major');
+    const inputValue = encodeURI(major);
+    axios.get(`/api/get_blank_fill_questions?query=${inputValue}`).then((r) => {
+      setResult(r.data.result);
+    });
+  }, []);
 
   return (
     <Providers>
@@ -17,25 +24,7 @@ export default function Home() {
         </Box>
         <Grid gridTemplateColumns='264px auto 264px'>
           <LeftNav />
-          <div>
-            <Flex>
-              <Input ref={inputRef} />
-              <Button
-                w='200px'
-                color='white'
-                bgColor='green.600'
-                onClick={() => {
-                  const inputValue = encodeURI(inputRef.current.value);
-                  axios
-                    .get(`/api/get_questions?query=${inputValue}`)
-                    .then((r) => {
-                      setResult(r.data.result);
-                    });
-                }}
-              >
-                문제 만들기
-              </Button>
-            </Flex>
+          <Box h='calc(100vh - 60px)' overflow='scroll'>
             <Flex direction='column' gap='4px'>
               {result.map((r) => (
                 <div key={r.questionIndex}>
@@ -54,7 +43,7 @@ export default function Home() {
                 </div>
               ))}
             </Flex>
-          </div>
+          </Box>
           <RightNav />
         </Grid>
       </Grid>

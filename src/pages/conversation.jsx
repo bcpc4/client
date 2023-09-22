@@ -12,7 +12,9 @@ export default function Home() {
         </Box>
         <Grid gridTemplateColumns='264px auto 264px'>
           <LeftNav />
-          <Flex>대화하기</Flex>
+          <Box h='calc(100vh - 60px)' overflow='scroll'>
+            <Flex>대화하기</Flex>
+          </Box>
           <RightNav />
         </Grid>
       </Grid>
