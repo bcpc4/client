@@ -13,7 +13,7 @@ export default async function handler(request, response) {
     ${scholarResultsToText}
     
     make 5 vocabulary test by [Multiple Choice Fill-in-the-Blank Example] format. Give answer also.
-    The format of test must be like the example below. Make answer only in English.
+    The format of test must be like the example below. Make answer only in English. Never answer in Korean.
     ------
     [QuestionIndex] 1
     [Question] The importance of _______ was highlighted in interviews with welfare clients after welfare reform.
