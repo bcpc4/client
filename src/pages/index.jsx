@@ -1,4 +1,5 @@
 import { Providers } from '@/app/providers';
+import Header from '@/components/Header';
 import { Box, Center, Grid, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
@@ -32,9 +33,7 @@ export default function Home() {
   return (
     <Providers>
       <Grid gridTemplateRows='60px auto' h='100vh'>
-        <Box borderBottom='1px solid' borderColor='gray.600'>
-          헤더 있는 곳
-        </Box>
+        <Header />
         {myMajor ? (
           <Center justifyContent='space-around'>
             <Link href='/blank_fill'>
