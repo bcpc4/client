@@ -30,7 +30,7 @@ export default async function handler(request, response) {
     ${scholarResultsToText}
     
     make 4 vocabulary - definition map , the vocabulary must be unfamiliar and specialized
-    The format of each map must be like the example below.
+    The format of each map must be like the example below. Make answer only in English.
     ------
     [MapIndex] 1
     [Vocab] monoacylglycerol lipase (MAGL) 

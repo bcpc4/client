@@ -1,7 +1,8 @@
 import { Providers } from '@/app/providers';
+import CardQuestion from '@/components/CardQuestion';
 import LeftNav from '@/components/LeftNav';
 import RightNav from '@/components/RightNav';
-import { Box, Flex, Grid } from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -25,18 +26,7 @@ export default function Home() {
         <Grid gridTemplateColumns='264px auto 264px'>
           <LeftNav />
           <Box h='calc(100vh - 60px)' overflow='scroll'>
-            <Flex flexDir='column' gap='12px'>
-              {result.map((r) => (
-                <Grid
-                  key={r.mapIndex}
-                  gap='8px'
-                  gridTemplateColumns='200px auto'
-                >
-                  <Box>{r.vocab}</Box>
-                  <Box>{r.definition}</Box>
-                </Grid>
-              ))}
-            </Flex>
+            <CardQuestion vocabs={result} />
           </Box>
           <RightNav />
         </Grid>

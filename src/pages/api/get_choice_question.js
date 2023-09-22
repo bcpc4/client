@@ -12,7 +12,7 @@ export default async function handler(request, response) {
     Below are trend papers from google scholar search engine.\n
     ${scholarResultsToText}
     
-    make 5 question test that user can study vocabulary by [Multiple Choice Example] format. Give answer also.
+    make 5 question test that user can study vocabulary by [Multiple Choice Example] format. Give answer also. Make answer only in English.
     The format of test must be like the example below.
     ------
     [QuestionIndex] 1

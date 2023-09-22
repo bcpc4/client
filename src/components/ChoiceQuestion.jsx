@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 const ChoiceQuestion = (props) => {
   const questions = props.questions;
-  console.log(questions);
   const [curQIndex, setCurQIndex] = useState(0);
   const [numAns, setNumAns] = useState(0);
 
