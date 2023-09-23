@@ -5,6 +5,7 @@ import {
   Flex,
   Image,
 } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -88,6 +89,8 @@ const RightNav = () => {
       </Box>
       <Link href='/review'>
         <Box
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
           bg='#569E54'
           color='#FFF4CD'
           textAlign='center'
@@ -96,7 +99,6 @@ const RightNav = () => {
           fontStyle='normal'
           fontWeight='700'
           lineHeight='56px'
-          width='233px'
           height='56px'
           flexShrink={0}
           borderRadius='10px'

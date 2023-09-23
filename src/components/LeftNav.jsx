@@ -1,33 +1,36 @@
-import { Button, Flex } from "@chakra-ui/react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Button, Flex } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const LeftNav = () => {
   const router = useRouter();
 
   return (
     <Flex
-      direction="column"
-      gap="20px"
-      padding="20px 12px"
-      w="264px"
-      h="calc(100vh - 60px)"
-      bg="#164330"
+      direction='column'
+      gap='20px'
+      padding='20px 12px'
+      w='264px'
+      h='calc(100vh - 60px)'
+      bg='#164330'
     >
-      <Link href="/blank_fill">
+      <Link href='/blank_fill'>
         <Button
-          bg={router.pathname.slice(1) === "blank_fill" ? "#FFC120" : "white"}
-          fontWeight="bold"
-          padding="30px"
-          width="100%"
-          variant="ghost"
-          borderRadius="10px"
-          color="black"
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
+          bg={router.pathname.slice(1) === 'blank_fill' ? '#FFC120' : 'white'}
+          fontWeight='bold'
+          padding='30px'
+          width='100%'
+          variant='ghost'
+          borderRadius='10px'
+          color='black'
           _hover={{
             bg:
-              router.pathname.slice(1) === "blank_fill"
-                ? "yellow.500"
-                : "gray.200",
+              router.pathname.slice(1) === 'blank_fill'
+                ? 'yellow.500'
+                : 'gray.200',
           }}
         >
           빈칸 채우기
@@ -50,22 +53,24 @@ const LeftNav = () => {
         </Box> */}
       </Link>
 
-      <Link href="/choice_question">
+      <Link href='/choice_question'>
         <Button
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
           bg={
-            router.pathname.slice(1) === "choice_question" ? "#FFC120" : "white"
+            router.pathname.slice(1) === 'choice_question' ? '#FFC120' : 'white'
           }
-          fontWeight="bold"
-          padding="30px"
-          width="100%"
-          variant="ghost"
-          borderRadius="10px"
-          color="black"
+          fontWeight='bold'
+          padding='30px'
+          width='100%'
+          variant='ghost'
+          borderRadius='10px'
+          color='black'
           _hover={{
             bg:
-              router.pathname.slice(1) === "choice_question"
-                ? "yellow.500"
-                : "gray.200",
+              router.pathname.slice(1) === 'choice_question'
+                ? 'yellow.500'
+                : 'gray.200',
           }}
         >
           객관식 풀기
@@ -90,17 +95,19 @@ const LeftNav = () => {
         </Box> */}
       </Link>
 
-      <Link href="/card">
+      <Link href='/card'>
         <Button
-          bg={router.pathname.slice(1) === "card" ? "#FFC120" : "white"}
-          fontWeight="bold"
-          padding="30px"
-          width="100%"
-          variant="ghost"
-          borderRadius="10px"
-          color="black"
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
+          bg={router.pathname.slice(1) === 'card' ? '#FFC120' : 'white'}
+          fontWeight='bold'
+          padding='30px'
+          width='100%'
+          variant='ghost'
+          borderRadius='10px'
+          color='black'
           _hover={{
-            bg: router.pathname.slice(1) === "card" ? "yellow.500" : "gray.200",
+            bg: router.pathname.slice(1) === 'card' ? 'yellow.500' : 'gray.200',
           }}
         >
           카드 맞추기
@@ -122,22 +129,24 @@ const LeftNav = () => {
           카드 맞추기
       </Box>*/}
       </Link>
-      <Link href="/conversation">
+      <Link href='/conversation'>
         <Button
+          as={motion.div}
+          whileHover={{ scale: 1.05 }}
           backgroundColor={
-            router.pathname.slice(1) === "conversation" ? "#FFC120" : "white"
+            router.pathname.slice(1) === 'conversation' ? '#FFC120' : 'white'
           }
-          fontWeight="bold"
-          padding="30px"
-          width="100%"
-          variant="ghost"
-          borderRadius="10px"
-          color="black"
+          fontWeight='bold'
+          padding='30px'
+          width='100%'
+          variant='ghost'
+          borderRadius='10px'
+          color='black'
           _hover={{
             bg:
-              router.pathname.slice(1) === "conversation"
-                ? "yellow.500"
-                : "gray.200",
+              router.pathname.slice(1) === 'conversation'
+                ? 'yellow.500'
+                : 'gray.200',
           }}
         >
           대화하기
