@@ -58,86 +58,86 @@ export default function Home() {
 
   return (
     <Providers>
-      <Grid gridTemplateRows='60px auto' h='100vh'>
+      <Grid gridTemplateRows="60px auto" h="100vh">
         <Header />
-        <Grid gridTemplateColumns='264px auto 264px'>
+        <Grid gridTemplateColumns="264px auto 264px">
           <LeftNav />
           <Grid
-            gridTemplateColumns='200px auto'
-            h='calc(100vh - 60px)'
-            overflow='scroll'
-            padding='8px'
-            gap='8px'
-            alignItems='center'
+            gridTemplateColumns="200px auto"
+            h="calc(100vh - 60px)"
+            overflow="scroll"
+            padding="8px"
+            gap="8px"
+            alignItems="center"
           >
             {isSpeaking ? (
               <Image
-                src='/avatar1.gif'
-                alt='avatar'
-                w='200px'
-                borderRadius='50%'
-                border='1px solid'
-                borderColor='#164330'
+                src="/avatar1.gif"
+                alt="avatar"
+                w="200px"
+                borderRadius="50%"
+                border="1px solid"
+                borderColor="#164330"
               />
             ) : (
               <Image
-                src='/avatar1.jpeg'
-                alt='avatar'
-                w='200px'
-                borderRadius='50%'
-                border='1px solid'
-                borderColor='#164330'
+                src="/avatar1.jpeg"
+                alt="avatar"
+                w="200px"
+                borderRadius="50%"
+                border="1px solid"
+                borderColor="#164330"
               />
             )}
-            <Flex flexDirection='column' gap='8px'>
+            <Flex flexDirection="column" gap="8px">
               {firstQuestion !== '' ? (
                 <Text
-                  borderRadius='12px'
-                  borderBottomLeftRadius='4px'
-                  bg='#164330'
-                  color='white'
-                  p='4px 8px'
+                  borderRadius="12px"
+                  borderBottomLeftRadius="4px"
+                  bg="#164330"
+                  color="white"
+                  p="4px 8px"
                 >
                   {firstQuestion}
                 </Text>
               ) : (
                 <Text
-                  borderRadius='12px'
-                  borderBottomLeftRadius='4px'
-                  bg='#164330'
-                  color='white'
-                  p='4px 8px'
+                  borderRadius="12px"
+                  borderBottomLeftRadius="4px"
+                  bg="#164330"
+                  color="white"
+                  p="4px 8px"
                 >
                   ...
                 </Text>
               )}
               {myAnswerList[0] !== undefined && (
                 <Text
-                  borderRadius='12px'
-                  borderBottomRightRadius='4px'
-                  bg='gray.100'
-                  p='4px 8px'
+                  borderRadius="12px"
+                  borderBottomRightRadius="4px"
+                  bg="gray.100"
+                  p="4px 8px"
                 >
                   {myAnswerList[0]}
                 </Text>
               )}
               {secondQuestion !== '' && (
                 <Text
-                  borderRadius='12px'
-                  borderBottomLeftRadius='4px'
-                  bg='#164330'
-                  color='white'
-                  p='4px 8px'
+                  borderRadius="12px"
+                  borderBottomLeftRadius="4px"
+                  bg="#164330"
+                  color="white"
+                  p="4px 8px"
                 >
                   {secondQuestion}
                 </Text>
               )}
               {myAnswerList[1] !== undefined && (
                 <Text
-                  borderRadius='12px'
-                  borderBottomRightRadius='4px'
-                  bg='gray.100'
-                  p='4px 8px'
+                  borderRadius="12px"
+                  borderBottomRightRadius="4px"
+                  bg="gray.100"
+                  p="4px 8px"
                 >
                   {myAnswerList[1]}
                 </Text>
@@ -147,17 +147,17 @@ export default function Home() {
           <RightNav />
         </Grid>
         <Box
-          position='absolute'
+          position="absolute"
           zIndex={3000}
-          bottom='12px'
-          left='50%'
-          p='8px'
-          borderRadius='6px'
-          transform='translateX(-50%)'
-          w='250px'
-          bgColor='gray.200'
-          textAlign='center'
-          cursor='pointer'
+          bottom="12px"
+          left="50%"
+          p="8px"
+          borderRadius="6px"
+          transform="translateX(-50%)"
+          w="250px"
+          bgColor="gray.200"
+          textAlign="center"
+          cursor="pointer"
           _hover={{ bg: 'gray.300' }}
           onClick={() => {
             if (!isRecording) {

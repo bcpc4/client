@@ -1,6 +1,13 @@
 import { addIncorrect } from "@/utils/review";
-
-import { Box, Button, Center, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Flex,
+  Image,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -8,6 +15,7 @@ const ChoiceQuestion = (props) => {
   const questions = props.questions;
   const [curQIndex, setCurQIndex] = useState(0);
   const [numAns, setNumAns] = useState(0);
+  const [phase, setPhase] = useState("INIT");
 
   useEffect(() => {
     if (curQIndex >= questions.length) {
@@ -15,6 +23,40 @@ const ChoiceQuestion = (props) => {
       localStorage.setItem("progress", (prevProgress + numAns).toString());
     }
   }, [curQIndex, questions, numAns]);
+
+  if (phase === "INIT")
+    return (
+      <Center h="calc(100vh - 60px)" flexDir="column">
+        <Image
+          w="150px"
+          src="https://s3-alpha-sig.figma.com/img/fdee/10ba/02ea0d674ddd84ab06b07eb3342448c4?Expires=1696204800&Signature=L0~DrBoTIwlvYNVsd4IBjWX1469B9UO0Dik9vFemM1UyYyzcTB1OJbhe8aIsMX4-QY3IHp~yzOc6HytQrnj2UoPZhV0CbpSAcnPrVzkXCdhPJVuLDBFNAExyNi7AYsuz3hKqlpWNAntXjgK8tJlV~rciAAVSFpiCyuqT5k5ydcprEdSqje55607LwLTWNLFBqpzJb8phfIuk-upqSaFWWYgRRmdWdeqfcrc~ENwwyV0BkVa0XZHaZZrf9MJwSCjtPjcTrJIEtnyoeX-XKxoPw-FTmLI3uyZ7MT2NfiSr8ILZdX6OPHYaBDTh7AF2GQ7MivrOaW064ckfT9zsM91c3w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+          alt="logo"
+        />
+        <Box h="30px" />
+        <Input
+          type="number"
+          placeholder="문제 수 선택"
+          textAlign="center"
+          bg="#164330"
+          color="white"
+          size="lg"
+          w="320px"
+        />
+        <Box h="90px" />
+        <Center
+          bg="#164330"
+          w="200px"
+          h="200px"
+          borderRadius="50%"
+          cursor="pointer"
+          onClick={() => setPhase("START")}
+        >
+          <Text color="white" fontSize="30px" fontWeight="bold">
+            Start!
+          </Text>
+        </Center>
+      </Center>
+    );
 
   if (questions.length === 0) return <div>불러오는중..</div>;
 

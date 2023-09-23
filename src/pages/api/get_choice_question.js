@@ -13,7 +13,7 @@ export default async function handler(request, response) {
     ${scholarResultsToText}
     
     make 5 question test that user can study vocabulary by [Multiple Choice Example] format. Give answer also. Make answer only in English.
-    The format of test must be like the example below.
+    The format of test must be like the example below. Make answer only in English. Never answer in Korean.
     ------
     [QuestionIndex] 1
     [Question] What can be measured in peripheral blood samples to provide information on tumour biology?
