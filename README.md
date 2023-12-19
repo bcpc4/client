@@ -17,7 +17,7 @@ https://seojinseojin.notion.site/5ce888b3fdd54b95b666a97a4458d27f
 
 <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/> <img src="https://shields.io/badge/chakra--ui-black?logo=chakraui&style=for-the-badge"/> 
 
-**Generative AI API**
+**OpenAI API**
 
 <img src="https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white"/> <img src="https://img.shields.io/badge/Dall--E-74aa9c?style=for-the-badge&logo=openai&logoColor=white"/>
 
