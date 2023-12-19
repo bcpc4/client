@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## LABster - AI를 활용한 전공 단어 공부 서비스
 
-## Getting Started
+### 🏆 2023년 제 3회 SKKU 사범대학 AI교육 해커톤 대회 은상 수상작
+<img height="200" src="https://github.com/bcpc4/client/assets/48249505/89095cea-eb22-40cf-b259-3360541439e2"/>
+<img height="200" src="https://github.com/bcpc4/client/assets/48249505/d60d6f59-61ec-4bb2-a81c-e3c50ecc8418"/>
+<img height="200" src="https://github.com/bcpc4/client/assets/48249505/7de0bf33-6cc8-4dbb-9d26-f6092c7153e0"/>
 
-First, run the development server:
+### 😼 주요 기능
+- AI 언어 모델을 활용하여 원하는 전공 단어에 대해 공부할 수 있도록 **`빈칸 채우기`**, **`객관식 문제풀이`**, **`카드 맞추기`**, **`대화`** 기능 제공
+- 문제를 맞추면 경험치가 증가하는 UI, 틀린 문제는 오답 노트 제공
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 👯‍♀️ 시연 영상
+https://seojinseojin.notion.site/5ce888b3fdd54b95b666a97a4458d27f
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 👾 개발 도구
+**Web App Development**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/> <img src="https://shields.io/badge/chakra--ui-black?logo=chakraui&style=for-the-badge"/> 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Generative AI API**
 
-## Learn More
+<img src="https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white"/> <img src="https://img.shields.io/badge/Dall--E-74aa9c?style=for-the-badge&logo=openai&logoColor=white"/>
 
-To learn more about Next.js, take a look at the following resources:
+**TTS & STT**
+* Web Speech API
+* speaker.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Others**
+* Google Scholar API
